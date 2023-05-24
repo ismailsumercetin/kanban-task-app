@@ -1,0 +1,9 @@
+{
+  "short_name": "Novus Task",
+  "name": "Novus Task",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
