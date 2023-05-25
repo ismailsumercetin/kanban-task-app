@@ -1,3 +1,4 @@
+import { ReportTaskButton, SearchBar, TaskCard } from "./components";
 import useUser from "./contexts/useUser";
 
 const App = () => {
@@ -5,7 +6,9 @@ const App = () => {
   console.log(user);
   return (
     <div className="App">
-      user
+      <ReportTaskButton/>
+      <SearchBar/>
+      <TaskCard/>
     </div>
   );
 }
