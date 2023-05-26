@@ -6,11 +6,17 @@ import TaskCard from "./TaskCard";
 import useUser from "../contexts/useUser";
 
 const KanbanContainer = () => {
-  const { getTasksByStatus } = useTask();
+  const { getTasksByStatus, changeTaskStatusOnDrop } = useTask();
   const { getUserById } = useUser();
+
+  const onDragEnd = (event: any) => {
+    const { draggableId, destination: { droppableId } } = event;
+    changeTaskStatusOnDrop(draggableId, droppableId);
+  }
+
   return (
     <div className="container__kanban">
-      <DragDropContext onDragEnd={(a) => console.log(a)}>
+      <DragDropContext onDragEnd={onDragEnd}>
         {
           Object.keys(KANBAN_BOARD_TYPES).map((status, index) => {
             const filteredTasks = getTasksByStatus(status as Type_TaskStatus);

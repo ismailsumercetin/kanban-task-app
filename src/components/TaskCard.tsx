@@ -1,3 +1,4 @@
+import { TASK_TYPES } from "../constants"
 interface IProps {
   task_type: string
   content: string
@@ -24,8 +25,8 @@ const TaskCard = ({
         {content}
       </div>
       <div className="card__taskcard__footer">
-        <span className="card__taskcard__typeindicator" />
-        <span>{task_type}</span>
+        <span className={`card__taskcard__typeindicator ${task_type}`} />
+        <span>{TASK_TYPES[task_type]}</span>
       </div>
     </div>
   );

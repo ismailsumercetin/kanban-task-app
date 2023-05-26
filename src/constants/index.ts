@@ -6,6 +6,12 @@ export const KANBAN_BOARD_TYPES: {[key: string]: string} = {
   done: 'Done'
 } as const;
 
+export const TASK_TYPES: {[key: string]: string} = {
+  bug: 'Bug',
+  feature: 'Feature',
+  refactor: 'Refactor'
+} as const;
+
 export const DUMMY_TASKS: ITask[] = [
   {
     id: '112341234234',

@@ -21,6 +21,7 @@ export interface IUserContext {
   getUserById: (id: string) => IUser
 }
 export interface ITaskContext {
-  tasks: ITask[],
+  tasks: ITask[]
   getTasksByStatus: (status: Type_TaskStatus) => ITask[]
+  changeTaskStatusOnDrop: (taskId: string, newStatus: Type_TaskStatus, ) => void
 }

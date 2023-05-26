@@ -62,7 +62,8 @@
 
 .card__taskcard {
   padding: 12px;
-  background-color: red;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
   border-radius: var(--borderradius);
 }
 
@@ -94,8 +95,19 @@
   display: inline-block;
   width: 18px;
   height: 18px;
-  background-color: blue;
   border-radius: var(--borderradius);
+}
+
+.card__taskcard__typeindicator.bug {
+  background-color: #f32e2e;
+}
+
+.card__taskcard__typeindicator.refactor {
+  background-color: #e134cf;
+}
+
+.card__taskcard__typeindicator.feature {
+  background-color: #55b969;
 }
 
 .container__kanban {
