@@ -1,20 +1,26 @@
-export type TaskType = 'Bug' | 'Feature' | 'Refactor';
-export type TaskStatus = 'Backlog' | 'InProgress' | 'Done';
+export type Type_TaskType = 'bug' | 'feature' | 'refactor';
+export type Type_TaskStatus = 'backlog' | 'inProgress' | 'done';
 
 export interface ITask {
-  id: Number
-  task_type: TaskType
-  content: String
+  id: string
+  userId: string
+  task_type: Type_TaskType
+  content: string
   createdAt: Date
-  status: TaskStatus
+  status: Type_TaskStatus
 }
 
 export interface IUser {
-  id: Number
-  name: String,
-  bio: String
+  id: string
+  name: string
+  bio: string
 }
 
 export interface IUserContext {
   user?: IUser
+  getUserById: (id: string) => IUser
+}
+export interface ITaskContext {
+  tasks: ITask[],
+  getTasksByStatus: (status: Type_TaskStatus) => ITask[]
 }
