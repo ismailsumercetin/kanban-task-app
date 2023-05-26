@@ -1,5 +1,6 @@
 :root {
   --borderradius: 6px;
+  --borderradius2x: 12px;
 }
 
 * {
@@ -8,7 +9,28 @@
   box-sizing: border-box;
   font-family: Tahoma, sans-serif;
   letter-spacing: .5px;
+}
 
+.App {
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 6px 14px -8px rgba(158,169,178,1);
+  -moz-box-shadow: 0px 6px 14px -8px rgba(158,169,178,1);
+  box-shadow: 0px 6px 14px -8px rgba(158,169,178,1);
+}
+
+.header {
+  margin-bottom: 24px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: var(--borderradius2x);
 }
 
 .btn__reporttask {
@@ -74,4 +96,25 @@
   height: 18px;
   background-color: blue;
   border-radius: var(--borderradius);
+}
+
+.container__kanban {
+  display: flex;
+  height: 85%;
+  gap: 12px;
+}
+
+.container__kanban .kanban {
+  width: 33%;
+  padding: 16px;
+  border-radius: var(--borderradius2x);
+}
+
+.kanban .kanban__title {
+  margin-bottom: 12px;
+}
+
+.kanban .kanban__tasksection{
+  height: 95%;
+  overflow-y: scroll;
 }

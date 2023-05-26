@@ -1,14 +1,10 @@
-import { ReportTaskButton, SearchBar, TaskCard } from "./components";
-import useUser from "./contexts/useUser";
+import { Header, KanbanContainer } from "./components";
 
 const App = () => {
-  const { user } = useUser();
-  console.log(user);
   return (
     <div className="App">
-      <ReportTaskButton/>
-      <SearchBar/>
-      <TaskCard/>
+      <Header />
+      <KanbanContainer />
     </div>
   );
 }
