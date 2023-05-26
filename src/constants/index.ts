@@ -17,7 +17,7 @@ export const DUMMY_TASKS: ITask[] = [
     id: '112341234234',
     userId: '0',
     task_type: 'bug',
-    content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
+    content: 'task one',
     createdAt: new Date(),
     status: 'backlog'
   },
@@ -25,7 +25,7 @@ export const DUMMY_TASKS: ITask[] = [
     id: '23523525235',
     userId: '1',
     task_type: 'feature',
-    content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
+    content: 'task two',
     createdAt: new Date(),
     status: 'done'
   },

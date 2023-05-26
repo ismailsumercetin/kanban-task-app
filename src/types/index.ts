@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 export type Type_TaskType = 'bug' | 'feature' | 'refactor';
 export type Type_TaskStatus = 'backlog' | 'inProgress' | 'done';
 
@@ -25,4 +26,7 @@ export interface ITaskContext {
   getTasksByStatus: (status: Type_TaskStatus) => ITask[]
   changeTaskStatusOnDrop: (taskId: string, newStatus: Type_TaskStatus, ) => void
   getTasksByUserId: (userId: string) => ITask[]
+  searchVal: string
+  setSearchVal: Dispatch<SetStateAction<string>>
+  filterBySearchVal: (tasks: ITask[]) => ITask[]
 }

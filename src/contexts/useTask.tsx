@@ -6,6 +6,7 @@ const TaskContext = createContext<ITaskContext>({} as ITaskContext);
 
 export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
   const [tasks, setTasks] = useState(DUMMY_TASKS);
+  const [searchVal, setSearchVal] = useState('');
 
   const getTasksByStatus = (status: Type_TaskStatus) => tasks.filter(task => task.status === status);
   const changeTaskStatusOnDrop = (taskId: string, newStatus: Type_TaskStatus) => {
@@ -16,11 +17,16 @@ export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ child
   };
   const getTasksByUserId = (userId: string) => tasks.filter(task => task.userId === userId);
 
+  const filterBySearchVal = (tasks: ITask[]) => tasks.filter(task => task.content.toLowerCase().indexOf(searchVal) > -1);
+
   const values = {
     tasks,
     getTasksByStatus,
     changeTaskStatusOnDrop,
-    getTasksByUserId
+    getTasksByUserId,
+    searchVal,
+    setSearchVal,
+    filterBySearchVal
   };
 
   return (
