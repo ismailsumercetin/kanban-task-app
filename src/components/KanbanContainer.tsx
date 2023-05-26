@@ -10,8 +10,12 @@ const KanbanContainer = () => {
   const { getUserById } = useUser();
 
   const onDragEnd = (event: any) => {
-    const { draggableId, destination: { droppableId } } = event;
-    changeTaskStatusOnDrop(draggableId, droppableId);
+    try {
+      const { draggableId, destination: { droppableId } } = event;
+      changeTaskStatusOnDrop(draggableId, droppableId);
+    } catch (e){
+      console.log(e);
+    }
   }
 
   return (
@@ -22,7 +26,7 @@ const KanbanContainer = () => {
             const filteredTasks = getTasksByStatus(status as Type_TaskStatus);
             const cn = `kanban kanban__${status} shadow`;
             return (
-              <div className={cn}>
+              <div className={cn} key={index}>
                 <div className="kanban__title">{KANBAN_BOARD_TYPES[status]}</div>
                 <Droppable key={index} droppableId={status}>
                   {provided => (

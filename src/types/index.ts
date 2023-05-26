@@ -24,4 +24,5 @@ export interface ITaskContext {
   tasks: ITask[]
   getTasksByStatus: (status: Type_TaskStatus) => ITask[]
   changeTaskStatusOnDrop: (taskId: string, newStatus: Type_TaskStatus, ) => void
+  getTasksByUserId: (userId: string) => ITask[]
 }

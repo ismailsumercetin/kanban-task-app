@@ -33,7 +33,7 @@
   border-radius: var(--borderradius2x);
 }
 
-.btn__reporttask {
+.btn, .btn__reporttask {
   background-color: #3d69e7;
   padding: 14px;
   cursor: pointer;
@@ -60,6 +60,10 @@
     color: #9ea9b2;
 }
 
+.kanban__tasksection > div {
+  margin-bottom: 12px;
+}
+
 .card__taskcard {
   padding: 12px;
   background-color: #fff;
@@ -74,7 +78,7 @@
 }
 
 .card__taskcard .card__taskcard__header img {
-  width: 52px;
+  min-width: 52px;
   height: 52px;
   object-fit:cover;
   border-radius: 50%;
@@ -129,4 +133,45 @@
 .kanban .kanban__tasksection{
   height: 95%;
   overflow-y: scroll;
+}
+
+.modal__reporttask__cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  opacity: .3;
+}
+
+.modal__reporttask {
+  padding: 24px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: var(--borderradius2x);
+  width: 60%;
+  height: 50vh;
+}
+
+.modal__reporttask__submit {
+  padding-left: 24px;
+  padding-right: 24px;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
+.modal__closebtn {
+  display: inline-block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z'%3E%3C/path%3E%3C/svg%3E");
 }

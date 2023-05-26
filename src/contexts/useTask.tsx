@@ -14,11 +14,13 @@ export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ child
     task.status = newStatus;
     setTasks([...filteredTasks, task]);
   };
+  const getTasksByUserId = (userId: string) => tasks.filter(task => task.userId === userId);
 
   const values = {
     tasks,
     getTasksByStatus,
-    changeTaskStatusOnDrop
+    changeTaskStatusOnDrop,
+    getTasksByUserId
   };
 
   return (
