@@ -7,6 +7,7 @@ const TaskContext = createContext<ITaskContext>({} as ITaskContext);
 export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
   const [tasks, setTasks] = useState(DUMMY_TASKS);
   const [searchVal, setSearchVal] = useState('');
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   const getTasksByStatus = (status: Type_TaskStatus) => tasks.filter(task => task.status === status);
   const changeTaskStatusOnDrop = (taskId: string, newStatus: Type_TaskStatus) => {
@@ -26,7 +27,9 @@ export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ child
     getTasksByUserId,
     searchVal,
     setSearchVal,
-    filterBySearchVal
+    filterBySearchVal,
+    selectedDate,
+    setSelectedDate
   };
 
   return (

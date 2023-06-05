@@ -1,3 +1,4 @@
+import "react-datepicker/dist/react-datepicker.css";
 import { Header, KanbanContainer } from "./components";
 
 const App = () => {

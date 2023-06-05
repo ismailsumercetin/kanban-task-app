@@ -29,4 +29,6 @@ export interface ITaskContext {
   searchVal: string
   setSearchVal: Dispatch<SetStateAction<string>>
   filterBySearchVal: (tasks: ITask[]) => ITask[]
+  selectedDate: Date
+  setSelectedDate: Dispatch<SetStateAction<Date>>
 }
