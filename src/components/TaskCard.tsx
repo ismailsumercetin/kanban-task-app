@@ -4,18 +4,20 @@ interface IProps {
   content: string
   name: string
   bio: string
+  image: string
 }
 
 const TaskCard = ({
   task_type,
   content,
   name,
-  bio
+  bio,
+  image
 }: IProps) => {
   return (
     <div className="card__taskcard">
       <div className="card__taskcard__header">
-        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/220px-Bill_Gates_2017_%28cropped%29.jpg'/>
+        <img alt={name} src={image} />
         <div className="card__taskcard__header__userinfo">
           <div>{name}</div>
           <div>{bio}</div>

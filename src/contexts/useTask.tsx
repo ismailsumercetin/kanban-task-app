@@ -8,6 +8,7 @@ export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ child
   const [tasks, setTasks] = useState(DUMMY_TASKS);
   const [searchVal, setSearchVal] = useState('');
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+  const [modalData, setModalData] = useState<ITask[]>([]);
 
   const getTasksByStatus = (status: Type_TaskStatus) => tasks.filter(task => task.status === status);
   const getTasksBySelectedDate = () => {
@@ -23,7 +24,7 @@ export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ child
     task.status = newStatus;
     setTasks([...filteredTasks, task]);
   };
-  const getTasksByUserId = (userId: string) => tasks.filter(task => task.userId === userId);
+  const getTasksByUserId = (userId: string) => getTasksBySelectedDate().filter(task => task.userId === userId);
 
   const filterBySearchVal = (tasks: ITask[]) => tasks.filter(task => task.content.toLowerCase().indexOf(searchVal) > -1);
 
@@ -37,7 +38,9 @@ export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ child
     filterBySearchVal,
     selectedDate,
     setSelectedDate,
-    getTasksBySelectedDate
+    getTasksBySelectedDate,
+    modalData,
+    setModalData
   };
 
   return (

@@ -36,7 +36,7 @@ const KanbanContainer = () => {
                       {...provided.droppableProps}
                     >
                       { filteredBySearchVal.map((task, index) => {
-                        const { name, bio } = getUserById(task.userId);
+                        const { name, bio, image } = getUserById(task.userId);
                         return (
                           <Draggable
                             key={task.id}
@@ -54,6 +54,7 @@ const KanbanContainer = () => {
                                   content={task.content}
                                   name={name}
                                   bio={bio}
+                                  image={image}
                                 />
                               </div>
                             )}

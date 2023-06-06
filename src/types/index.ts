@@ -15,6 +15,7 @@ export interface IUser {
   id: string
   name: string
   bio: string
+  image: string
 }
 
 export interface IUserContext {
@@ -32,4 +33,6 @@ export interface ITaskContext {
   selectedDate: Date
   setSelectedDate: Dispatch<SetStateAction<Date>>
   getTasksBySelectedDate: () => ITask[]
+  modalData: ITask[]
+  setModalData: Dispatch<SetStateAction<ITask[]>>
 }

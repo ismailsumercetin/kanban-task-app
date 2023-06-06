@@ -11,7 +11,7 @@ interface IProps {
 type InputRowProps = { selectedType?: Type_TaskType, content?: string }
 
 const InputRow = ({ selectedType, content }: InputRowProps) => {
-  return  (
+  return (
     <div>
       <select name="tasks">
         <option value="">Type</option>
@@ -26,9 +26,9 @@ const InputRow = ({ selectedType, content }: InputRowProps) => {
           ))
         }
       </select>
-      <textarea>
-        { content }
-      </textarea>
+      <textarea
+        defaultValue={content}
+      />
     </div>
   );
 };
@@ -45,7 +45,7 @@ const ReportTaskModal:FunctionComponent<IProps> = ({ onClose }) => {
       <div className="modal__reporttask">
         <div className="modal__closebtn" onClick={onClose}/>
         <div>
-          {
+        {
             userTasks.map(task => (
               <InputRow selectedType={task.task_type} content={task.content} />
             ))

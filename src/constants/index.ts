@@ -45,5 +45,21 @@ export const DUMMY_TASKS: ITask[] = [
     content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
     createdAt: new Date(),
     status: 'inProgress'
+  },
+  {
+    id: '3141241231231',
+    userId: '0',
+    task_type: 'bug',
+    content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
+    createdAt: new Date(),
+    status: 'inProgress'
+  },
+  {
+    id: '3141241231232',
+    userId: '2',
+    task_type: 'refactor',
+    content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
+    createdAt: new Date(),
+    status: 'done'
   }
 ];
