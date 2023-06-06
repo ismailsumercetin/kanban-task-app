@@ -1,12 +1,12 @@
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { KANBAN_BOARD_TYPES } from "../constants";
-import { Type_TaskStatus } from "../types";
 import useTask from "../contexts/useTask";
 import TaskCard from "./TaskCard";
 import useUser from "../contexts/useUser";
+import { ITask } from "../types";
 
 const KanbanContainer = () => {
-  const { getTasksByStatus, changeTaskStatusOnDrop, filterBySearchVal } = useTask();
+  const { changeTaskStatusOnDrop, filterBySearchVal, getTasksBySelectedDate } = useTask();
   const { getUserById } = useUser();
 
   const onDragEnd = (event: any) => {
@@ -17,14 +17,13 @@ const KanbanContainer = () => {
       console.log(e);
     }
   }
-
+  const tasksByDate = getTasksBySelectedDate();
   return (
     <div className="container__kanban">
       <DragDropContext onDragEnd={onDragEnd}>
         {
           Object.keys(KANBAN_BOARD_TYPES).map((status, index) => {
-            const filteredTasks = getTasksByStatus(status as Type_TaskStatus);
-            const filteredBySearchVal = filterBySearchVal(filteredTasks);
+            const filteredBySearchVal = filterBySearchVal(tasksByDate.filter((task: ITask) => task.status === status));
             const cn = `kanban kanban__${status} shadow`;
             return (
               <div className={cn} key={index}>

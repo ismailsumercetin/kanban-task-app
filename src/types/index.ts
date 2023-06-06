@@ -31,4 +31,5 @@ export interface ITaskContext {
   filterBySearchVal: (tasks: ITask[]) => ITask[]
   selectedDate: Date
   setSelectedDate: Dispatch<SetStateAction<Date>>
+  getTasksBySelectedDate: () => ITask[]
 }

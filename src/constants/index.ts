@@ -12,13 +12,22 @@ export const TASK_TYPES: {[key: string]: string} = {
   refactor: 'Refactor'
 } as const;
 
+const getYesterdayDate = () => {
+  const currentDate = new Date();
+
+  const oneDayMilliseconds = 24 * 60 * 60 * 1000;
+  const yesterdayDate = new Date(currentDate.getTime() - oneDayMilliseconds);
+
+  return yesterdayDate;
+};
+
 export const DUMMY_TASKS: ITask[] = [
   {
     id: '112341234234',
     userId: '0',
     task_type: 'bug',
     content: 'task one',
-    createdAt: new Date(),
+    createdAt: getYesterdayDate(),
     status: 'backlog'
   },
   {

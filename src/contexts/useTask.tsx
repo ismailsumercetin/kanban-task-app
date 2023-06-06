@@ -10,6 +10,13 @@ export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ child
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   const getTasksByStatus = (status: Type_TaskStatus) => tasks.filter(task => task.status === status);
+  const getTasksBySelectedDate = () => {
+    const startOfDay = selectedDate.setHours(0, 0, 0, 0);
+    const endOfDay = selectedDate.setHours(23, 59, 59, 999);
+
+    return tasks.filter(task => task.createdAt.getTime() > startOfDay && task.createdAt.getTime() < endOfDay);
+  };
+
   const changeTaskStatusOnDrop = (taskId: string, newStatus: Type_TaskStatus) => {
     const filteredTasks = tasks.filter(task => task.id !== taskId);
     const task = tasks.find(task => task.id === taskId) as ITask;
@@ -29,7 +36,8 @@ export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ child
     setSearchVal,
     filterBySearchVal,
     selectedDate,
-    setSelectedDate
+    setSelectedDate,
+    getTasksBySelectedDate
   };
 
   return (
