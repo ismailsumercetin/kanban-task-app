@@ -15,8 +15,8 @@ const InputRow = ({ task }: InputRowProps) => {
   const { task_type, content, createdAt, id } = task;
   const { updateModalData } = useTask();
   return (
-    <div>
-      <select name="tasks" onChange={(e) => updateModalData('task_type', task.id, e.target.value)}>
+    <div className="inputrow">
+      <select name="tasktypes" className="dropdown__tasktype" onChange={(e) => updateModalData('task_type', task.id, e.target.value)}>
         {!createdAt && <option value="">Type</option>}
         {
           Object.keys(TASK_TYPES).map(type => (
@@ -33,6 +33,7 @@ const InputRow = ({ task }: InputRowProps) => {
         id={id}
         name={id}
         value={content}
+        rows={4}
         onChange={(e) => updateModalData('content', task.id, e.target.value)}
       />
     </div>
@@ -75,7 +76,7 @@ const ReportTaskModal:FunctionComponent<IProps> = ({ onClose }) => {
       <div className="modal__reporttask__cover" />
       <div className="modal__reporttask">
         <div className="modal__closebtn" onClick={onClose}/>
-        <div>
+        <div className="container__inputrow">
           {
             modalData.map(task => (
               <InputRow task={task}  />
