@@ -24,10 +24,10 @@ const KanbanContainer = () => {
         {
           Object.keys(KANBAN_BOARD_TYPES).map((status, index) => {
             const filteredBySearchVal = filterBySearchVal(tasksByDate.filter((task: ITask) => task.status === status));
-            const cn = `kanban kanban__${status} shadow`;
+            const cn = `kanban kanban__${status} shadow ${filteredBySearchVal.length > 0 ? 'filled' : ''}`;
             return (
               <div className={cn} key={index}>
-                <div className="kanban__title">{KANBAN_BOARD_TYPES[status]}</div>
+                <div className={`kanban__title ${status}`}>{KANBAN_BOARD_TYPES[status]}</div>
                 <Droppable key={index} droppableId={status}>
                   {provided => (
                     <div

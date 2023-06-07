@@ -20,9 +20,9 @@
 }
 
 .shadow {
-  -webkit-box-shadow: 0px 6px 14px -8px rgba(158,169,178,1);
-  -moz-box-shadow: 0px 6px 14px -8px rgba(158,169,178,1);
-  box-shadow: 0px 6px 14px -8px rgba(158,169,178,1);
+  -webkit-box-shadow: 0px 6px 15px -8px rgba(158,169,178,1);
+  -moz-box-shadow: 0px 6px 15px -8px rgba(158,169,178,1);
+  box-shadow: 0px 6px 15px -8px rgba(158,169,178,1);
 }
 
 .header {
@@ -129,11 +129,34 @@
 
 .kanban .kanban__title {
   margin-bottom: 12px;
+  font-size: 12px;
+}
+
+.kanban .kanban__title.backlog {
+  color: #acadf9;
+}
+
+.kanban .kanban__title.inProgress {
+  color: #e36e46;
+}
+
+.kanban .kanban__title.done {
+  color: #55b969;
 }
 
 .kanban .kanban__tasksection{
   height: 95%;
   overflow-y: scroll;
+}
+
+.kanban.kanban__backlog.filled {
+  background-color: #f9f9fb;
+}
+.kanban.kanban__inProgress.filled {
+  background-color: #faf5f4;
+}
+.kanban.kanban__done.filled {
+  background-color: #f3f8f5;
 }
 
 .modal__reporttask__cover {
