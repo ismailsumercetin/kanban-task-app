@@ -19,8 +19,8 @@ const TaskCard = ({
       <div className="card__taskcard__header">
         <img alt={name} src={image} />
         <div className="card__taskcard__header__userinfo">
-          <div>{name}</div>
-          <div>{bio}</div>
+          <div className="username">{name}</div>
+          <div className="bio">{bio}</div>
         </div>
       </div>
       <div className="card__taskcard__content">

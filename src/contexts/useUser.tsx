@@ -7,7 +7,7 @@ const USERS = [
   {
      id: '0',
 		 name: "Bill Gates",
-     bio: "Chairman of Microsof",
+     bio: "Chairman of Microsoft",
      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bill_Gates_2017_%28cropped%29.jpg/220px-Bill_Gates_2017_%28cropped%29.jpg'
   },
   {

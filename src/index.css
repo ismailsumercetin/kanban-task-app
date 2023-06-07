@@ -67,9 +67,15 @@
 
 .card__taskcard {
   padding: 12px;
+  font-size: 12px;
   background-color: #fff;
   border: 1px solid #e5e5e5;
   border-radius: var(--borderradius);
+}
+
+.card__taskcard__header__userinfo .bio {
+  font-size: 10px;
+  color: #9ea9b2;
 }
 
 .card__taskcard .card__taskcard__header {
@@ -79,11 +85,11 @@
 }
 
 .card__taskcard .card__taskcard__header img {
-  min-width: 52px;
-  height: 52px;
+  min-width: 32px;
+  height: 32px;
   object-fit:cover;
   border-radius: 50%;
-  margin-right: 12px;
+  margin-right: 6px;
 }
 
 .card__taskcard .card__taskcard__content {
@@ -171,6 +177,8 @@
 }
 
 .modal__reporttask {
+  display: flex;
+  flex-direction: column;
   padding: 24px;
   position: absolute;
   top: 25%;
@@ -179,16 +187,17 @@
   background-color: #fff;
   border-radius: var(--borderradius2x);
   width: 60%;
-  height: 50vh;
+  min-height: 50vh;
   z-index: 3;
+  justify-content: space-between;
 }
 
 .modal__reporttask__submit {
+  margin-top: 24px;
   padding-left: 24px;
   padding-right: 24px;
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
+  width: min-content;
+  align-self: flex-end;
 }
 
 .modal__closebtn {
