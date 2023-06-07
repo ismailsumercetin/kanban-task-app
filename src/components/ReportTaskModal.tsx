@@ -76,6 +76,12 @@ const ReportTaskModal:FunctionComponent<IProps> = ({ onClose }) => {
       <div className="modal__reporttask__cover" />
       <div className="modal__reporttask">
         <div className="modal__closebtn" onClick={onClose}/>
+        <h2 className="modal__header">
+          Report Your Daily Tasks
+        </h2>
+        <p className="modal__description">
+          Please report your daily tasks below. You should enter the task type, task name, and estimated time you will spent on the task. You can also add a comments, but please keep them concise.
+        </p>
         <div className="container__inputrow">
           {
             modalData.map(task => (
