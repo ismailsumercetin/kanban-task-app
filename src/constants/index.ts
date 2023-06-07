@@ -12,54 +12,54 @@ export const TASK_TYPES: {[key: string]: string} = {
   refactor: 'Refactor'
 } as const;
 
-const getYesterdayDate = () => {
-  const currentDate = new Date();
+// const getYesterdayDate = () => {
+//   const currentDate = new Date();
 
-  const oneDayMilliseconds = 24 * 60 * 60 * 1000;
-  const yesterdayDate = new Date(currentDate.getTime() - oneDayMilliseconds);
+//   const oneDayMilliseconds = 24 * 60 * 60 * 1000;
+//   const yesterdayDate = new Date(currentDate.getTime() - oneDayMilliseconds);
 
-  return yesterdayDate;
-};
+//   return yesterdayDate;
+// };
 
 export const DUMMY_TASKS: ITask[] = [
-  {
-    id: '112341234234',
-    userId: '0',
-    task_type: 'bug',
-    content: 'task one',
-    createdAt: getYesterdayDate(),
-    status: 'backlog'
-  },
-  {
-    id: '23523525235',
-    userId: '1',
-    task_type: 'feature',
-    content: 'task two',
-    createdAt: new Date(),
-    status: 'done'
-  },
-  {
-    id: '314124123123',
-    userId: '2',
-    task_type: 'refactor',
-    content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-    createdAt: new Date(),
-    status: 'inProgress'
-  },
-  {
-    id: '3141241231231',
-    userId: '0',
-    task_type: 'bug',
-    content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-    createdAt: new Date(),
-    status: 'inProgress'
-  },
-  {
-    id: '3141241231232',
-    userId: '2',
-    task_type: 'refactor',
-    content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
-    createdAt: new Date(),
-    status: 'done'
-  }
+  // {
+  //   id: '112341234234',
+  //   userId: '0',
+  //   task_type: 'bug',
+  //   content: 'task one',
+  //   createdAt: getYesterdayDate(),
+  //   status: 'backlog'
+  // },
+  // {
+  //   id: '23523525235',
+  //   userId: '1',
+  //   task_type: 'feature',
+  //   content: 'task two',
+  //   createdAt: new Date(),
+  //   status: 'done'
+  // },
+  // {
+  //   id: '314124123123',
+  //   userId: '2',
+  //   task_type: 'refactor',
+  //   content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
+  //   createdAt: new Date(),
+  //   status: 'inProgress'
+  // },
+  // {
+  //   id: '3141241231231',
+  //   userId: '0',
+  //   task_type: 'bug',
+  //   content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
+  //   createdAt: new Date(),
+  //   status: 'inProgress'
+  // },
+  // {
+  //   id: '3141241231232',
+  //   userId: '2',
+  //   task_type: 'refactor',
+  //   content: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet',
+  //   createdAt: new Date(),
+  //   status: 'done'
+  // }
 ];

@@ -9,6 +9,7 @@ export interface ITask {
   content: string
   createdAt: Date
   status: Type_TaskStatus
+  [key: string]: any
 }
 
 export interface IUser {
@@ -35,4 +36,6 @@ export interface ITaskContext {
   getTasksBySelectedDate: () => ITask[]
   modalData: ITask[]
   setModalData: Dispatch<SetStateAction<ITask[]>>
+  handleSubmitTask: (data: ITask[]) => void
+  updateModalData: (type: string, id: string, data: string) => void
 }
