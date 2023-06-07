@@ -57,7 +57,7 @@ export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ child
           userId: user!.id,
           task_type: cur.task_type,
           content: cur.content,
-          createdAt: new Date(),
+          createdAt: new Date(selectedDate.getTime() - 1000),
           status: 'backlog'
         }]
       }
