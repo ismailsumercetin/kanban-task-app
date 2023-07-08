@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { FunctionComponent, useState } from "react";
 import ReportTaskModal from "./ReportTaskModal";
 
-const ReportTaskButton = () => {
+const ReportTaskButton: FunctionComponent = () => {
   const [toggleModal, setToggleModal] = useState(false);
 
   const toggle = () => setToggleModal(!toggleModal);

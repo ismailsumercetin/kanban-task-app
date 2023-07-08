@@ -1,7 +1,7 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, FunctionComponent } from 'react';
 import useTask from '../contexts/useTask';
 
-const SearchBar = () => {
+const SearchBar: FunctionComponent = () => {
   const { setSearchVal } = useTask();
   return (
     <input

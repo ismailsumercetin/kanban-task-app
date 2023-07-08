@@ -4,8 +4,9 @@ import useTask from "../contexts/useTask";
 import TaskCard from "./TaskCard";
 import useUser from "../contexts/useUser";
 import { ITask } from "../types";
+import { FunctionComponent } from "react";
 
-const KanbanContainer = () => {
+const KanbanContainer: FunctionComponent = () => {
   const { changeTaskStatusOnDrop, filterBySearchVal, getTasksBySelectedDate } = useTask();
   const { getUserById } = useUser();
 

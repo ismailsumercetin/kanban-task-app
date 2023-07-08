@@ -1,3 +1,4 @@
+import { FunctionComponent } from "react"
 import { TASK_TYPES } from "../constants"
 interface IProps {
   task_type: string
@@ -7,13 +8,13 @@ interface IProps {
   image: string
 }
 
-const TaskCard = ({
+const TaskCard: FunctionComponent<IProps> = ({
   task_type,
   content,
   name,
   bio,
   image
-}: IProps) => {
+}) => {
   return (
     <div className="card__taskcard">
       <div className="card__taskcard__header">

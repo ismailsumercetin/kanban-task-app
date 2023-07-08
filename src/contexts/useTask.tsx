@@ -1,13 +1,12 @@
 import React, { createContext, useState, useContext, FunctionComponent, ReactNode } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import { ITask, ITaskContext, Type_TaskStatus } from '../types';
-import { DUMMY_TASKS } from '../constants';
 import useUser from './useUser';
 
 const TaskContext = createContext<ITaskContext>({} as ITaskContext);
 
 export const TaskProvider: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
-  const [tasks, setTasks] = useState(DUMMY_TASKS);
+  const [tasks, setTasks] = useState<ITask[]>([]);
   const [searchVal, setSearchVal] = useState('');
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [modalData, setModalData] = useState<ITask[]>([]);

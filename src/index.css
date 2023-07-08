@@ -224,7 +224,6 @@
   background-size: 26px;
   background-position: right 8px center;
   cursor: pointer;
-
   position: relative;
 }
 
@@ -263,7 +262,6 @@
   width: 100%;
   resize: none;
   padding: 8px;
-
   border-radius: var(--borderradius) !important;
   border: 1px solid #e5e5e5 !important;
 }

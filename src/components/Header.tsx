@@ -2,8 +2,9 @@ import DatePicker from "react-datepicker";
 import useTask from '../contexts/useTask';
 import ReportTaskButton from "./ReportTaskButton";
 import SearchBar from "./SearchBar";
+import { FunctionComponent } from "react";
 
-const Header = () => {
+const Header: FunctionComponent = () => {
   const { selectedDate, setSelectedDate } = useTask();
 
   return (
@@ -12,7 +13,7 @@ const Header = () => {
         <ReportTaskButton/>
         <DatePicker
           selected={selectedDate}
-          onChange={date => {
+          onChange={(date: Date) => {
             if (date) {
               setSelectedDate(date);
             }
