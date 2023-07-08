@@ -1,6 +1,6 @@
-Drag and Drop Kanban Task Manager
+# Drag and Drop Kanban Task Manager
 
-App Features:
+## App Features:
 
 1) There are 3 unique users changing upon refresh,
 2) Change status of a task (Backlog, In Progress, Done) by dragging and dropping,
